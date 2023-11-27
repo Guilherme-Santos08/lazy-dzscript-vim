@@ -1,13 +1,9 @@
 return {
   "craftzdog/solarized-osaka.nvim",
-  lazy = true,
-  priority = 100,
-  opts = function()
-    return {
-      transparent = true,
-    }
-  end,
+  -- add gruvbox
+  { "ellisonleao/gruvbox.nvim" },
 
+  -- best theme ever
   {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -46,9 +42,11 @@ return {
       })
     end,
   },
-  {
-    'datsfilipe/min-theme.nvim',
-    as = "min-theme",
-    lazy = true,
-  },
+  lazy = true,
+  priority = 100,
+  opts = function()
+    return {
+      transparent = true,
+    }
+  end,
 }
