@@ -21,10 +21,10 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
   **Linux/Mac OS**
   ```sh
-  git clone https://github.com/rafa-thayto/lazy-dzscript-vim ~/.config/nvim
+  git clone https://github.com/Guilherme-Santos08/lazy-dzscript-vim ~/.config/nvim
   ```
 
   **Windows:**
   ```sh
-  git clone https://github.com/rafa-thayto/lazy-dzscript-vim $env:LOCALAPPDATA\nvim
+  git clone https://github.com/Guilherme-Santos08/lazy-dzscript-vim $env:LOCALAPPDATA\nvim
   ```
