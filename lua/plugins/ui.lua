@@ -55,7 +55,15 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 5000,
+      timeout = 2000,
+      render = "minimal",
+      stages = "static",
+      max_height = function()
+        return math.floor(vim.o.lines * 0.75)
+      end,
+      max_width = function()
+        return math.floor(vim.o.columns * 0.75)
+      end,
     },
   },
 
@@ -133,5 +141,20 @@ return {
       logo = string.rep("\n", 8) .. logo .. "\n\n"
       opts.config.header = vim.split(logo, "\n")
     end,
+  },
+
+  -- transparent
+  {
+    "xiyaowong/transparent.nvim",
+    cmd = {
+      "TransparentEnable",
+      "TransparentDisable",
+      "TransparentToggle",
+    },
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    event = "VeryLazy",
   },
 }
