@@ -10,6 +10,9 @@ keymap.set("n", "-", "<C-x>")
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
 
+-- clear search highlights
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -24,9 +27,12 @@ keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
 -- New tab
-keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
