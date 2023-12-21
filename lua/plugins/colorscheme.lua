@@ -1,5 +1,4 @@
 return {
-  "craftzdog/solarized-osaka.nvim",
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
@@ -44,7 +43,7 @@ return {
   },
   lazy = true,
   priority = 100,
-  opts = function()
+    opts = function()
     return {
       transparent = true,
     }

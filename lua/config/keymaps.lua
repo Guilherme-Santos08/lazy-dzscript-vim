@@ -1,3 +1,62 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+--
+local Util = require("lazyvim.util")
+
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    if opts.remap and not vim.g.vscode then
+      opts.remap = nil
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+end
+
+-- Oil.nvim
+map("n", "-", "<cmd>Oil<cr>", { desc = "Open oil.nvim" })
+map("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Open oil.nvim" })
+
+map("n", "<leader>E", "<cmd>Neotree toggle buffers<cr>", { desc = "Toggle Buffers Explorer" })
+
+-- Telescope
+map("n", "<C-p>", "<cmd>Telescope find_files<cr>")
+map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
+
+-- Tranparent
+map("n", "<leader>uT", "<cmd>TransparentEnable<cr>", { desc = "Enable background transparency" })
+map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle background transparency" })
+
+-- mini.nvim
+map("n", "<leader>C", function()
+  require("mini.bufremove").delete(0, false)
+end, { desc = "Delete Buffer" })
+
+-- some utilities
+map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
+map("n", "tn", "<cmd>tabnew<cr>")
+map("n", "<leader>n", "<cmd>noh<cr>", { desc = "Remove highlighting of search matches" })
+
+-- utilities to center the screen
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- visual
+map("v", "p", '"_dP')
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- moving lines
+map("x", "J", ":m '>+1<cr>gv=gv")
+map("x", "K", ":m '<-2<cr>gv=gv")
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -15,23 +74,6 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
--- Disable continuations
-keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
-keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
-
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
-
--- New tab
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
