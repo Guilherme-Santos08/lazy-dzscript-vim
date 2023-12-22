@@ -41,11 +41,12 @@ return {
       })
     end,
   },
-  lazy = true,
-  priority = 100,
-    opts = function()
-    return {
-      transparent = true,
-    }
-  end,
+
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-mocha",
+    },
+  },
 }
