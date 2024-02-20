@@ -30,10 +30,10 @@ return {
               new_file_status = false,
               padding = { left = 0, right = 2 },
               symbols = {
-                modified = "[+]", -- Text to show when the file is modified.
-                readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
+                modified = "[+]",        -- Text to show when the file is modified.
+                readonly = "[-]",        -- Text to show when the file is non-modifiable or readonly.
                 unnamed = "  [No Name]", -- Text to show for unnamed buffers.
-                newfile = "  [New]", -- Text to show for newly created file before first write
+                newfile = "  [New]",     -- Text to show for newly created file before first write
               },
             },
           },
@@ -57,13 +57,7 @@ return {
               padding = { right = 2 },
             },
           },
-          lualine_y = {
-            {
-              "hostname",
-              icon = { " ", align = "center" },
-              padding = { right = 2, left = 2 },
-            },
-          },
+          lualine_y = {},
           lualine_z = {
             {
               "location",
