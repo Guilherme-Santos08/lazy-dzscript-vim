@@ -29,5 +29,5 @@ return {
     cmd = "VimBeGood",
   },
 
-  'f-person/git-blame.nvim',
+  --'f-person/git-blame.nvim',
 }
