@@ -8,7 +8,9 @@ vim.opt.cursorlineopt = 'number'
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+
 vim.opt.scrolloff = 4
 vim.opt.wrap = false
