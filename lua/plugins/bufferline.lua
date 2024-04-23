@@ -6,16 +6,15 @@ local customColor = {
 return {
   {
     "akinsho/bufferline.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = {
       options = {
-
         separator_style = { "", "" },
-        indicator = { style = "none" },
         show_tab_indicators = false,
         show_close_icon = false,
         show_buffer_close_icons = true,
-        tab_size = 0,
+        tab_size = 10,
         max_name_length = 25,
         offsets = {
           {
@@ -26,6 +25,11 @@ return {
           },
         },
         modified_icon = "",
+        hover = {
+          enabled = true,
+          delay = 200,
+          reveal = { 'close' }
+        }
       },
 
       highlights = {
