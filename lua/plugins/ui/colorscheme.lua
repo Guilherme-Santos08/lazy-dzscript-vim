@@ -10,6 +10,8 @@ return {
 
   { 'datsfilipe/vesper.nvim' },
 
+  { 'datsfilipe/min-theme.nvim' },
+
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -68,7 +70,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vesper",
+      colorscheme = "min-theme",
     },
   },
 }
