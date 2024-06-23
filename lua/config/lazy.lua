@@ -18,7 +18,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     -- { import = "lazyvim.plugins.extras.lsp.none-ls" },
     -- import/override with your plugins
-    { import = "plugins" },
     { import = "plugins.code" },
     { import = "plugins.ui" },
   },
