@@ -4,10 +4,11 @@
 vim.opt.fillchars = { eob = " " }
 
 vim.opt.cursorline = false
-vim.opt.cursorlineopt = 'number'
+vim.opt.cursorlineopt = "number"
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

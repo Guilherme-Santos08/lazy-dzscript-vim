@@ -1,8 +1,8 @@
 return {
-  'supermaven-inc/supermaven-nvim',
+  "supermaven-inc/supermaven-nvim",
   opts = {
     keymaps = {
-      accept_suggestion = '<C-a>',
+      accept_suggestion = "<Tab>",
       clear_suggestion = "<c-x>",
       accept_word = "<c-q>",
     },

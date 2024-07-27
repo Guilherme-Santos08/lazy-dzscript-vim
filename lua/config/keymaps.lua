@@ -47,7 +47,6 @@ map("v", "p", '"_dP')
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -57,7 +56,6 @@ keymap.set("n", "x", '"_x')
 -- In visual mode replace p to P
 -- https://vi.stackexchange.com/questions/39149/how-to-stop-neovim-from-yanking-text-on-pasting-over-selection
 keymap.set("x", "p", "P")
-
 
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
