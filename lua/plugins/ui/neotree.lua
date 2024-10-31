@@ -18,7 +18,7 @@ return {
     },
     -- { "<leader>fe", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
   },
-  deactivate = function()
+ deactivate = function()
     vim.cmd([[Neotree close]])
   end,
   init = function()
@@ -56,7 +56,7 @@ return {
         if node.type == "directory" or node:has_children() then
           if not node:is_expanded() then -- if unexpanded, expand
             state.commands.toggle_node(state)
-          else                           -- if expanded and has children, seleect the next child
+          else -- if expanded and has children, seleect the next child
             require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
           end
         else -- if not a directory just open it
@@ -65,7 +65,7 @@ return {
       end,
     },
     window = {
-      width = 36,
+      width = 30,
       position = "right",
       mappings = {
         ["<space>"] = "none", -- disable space until we figure out which-key disabling
@@ -81,36 +81,12 @@ return {
     },
     default_component_configs = {
       indent = {
-        last_indent_marker = "╰",
-      },
-      icon = {
-        folder_closed = "󰉋",
-        folder_open = "󰝰",
-        folder_empty = "󰉖",
-      },
-      git_status = {
-        symbols = {
-          -- Change type
-          added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-          modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-          deleted = "✖", -- this can only be used in the git_status source
-          renamed = "󰏫", -- this can only be used in the git_status source
-          -- Status type
-          untracked = "",
-          ignored = "󱃓",
-          unstaged = "󰝦",
-          staged = "󰄴",
-          conflict = "",
-        },
+        with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+        expander_collapsed = "",
+        expander_expanded = "",
+        expander_highlight = "NeoTreeExpander",
       },
     },
-    -- filesystem = {
-    -- filtered_items = {
-    -- hide_dotfiles = false,
-    -- hide_gitignored = false,
-    -- },
-    -- },
-
   },
   config = function(_, opts)
     require("neo-tree").setup(opts)
