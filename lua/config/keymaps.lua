@@ -25,8 +25,8 @@ map("n", "<leader>E", "<cmd>Neotree toggle buffers<cr>", { desc = "Toggle Buffer
 -- map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
 
 -- Tranparent
-map("n", "<leader>uT", "<cmd>TransparentEnable<cr>", { desc = "Enable background transparency" })
-map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle background transparency" })
+-- map("n", "<leader>uT", "<cmd>TransparentEnable<cr>", { desc = "Enable background transparency" })
+-- map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle background transparency" })
 
 -- mini.nvim
 map("n", "<leader>C", function()

@@ -30,15 +30,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.notify",
-    version = false,
-    opts = {
-      window = {
-        winblend = 0,
-      },
-    },
-  },
-  {
     "echasnovski/mini.bufremove",
     version = false,
     opts = {

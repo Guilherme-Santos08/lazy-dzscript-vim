@@ -3,9 +3,6 @@ return {
     "folke/noice.nvim",
     ---@type NoiceConfig
     opts = {
-      notify = {
-        enabled = false,
-      },
       lsp = {
         signature = {
           auto_open = {
